@@ -1,6 +1,68 @@
 @import '@styles/var.scss';
 
 .header {
-    height: 70px;
-    background-color: $_yellow;
+    display: flex;
+    border: 2px solid $border-color;
+    font-family: "Raleway-Light";
+    height: 160px;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        margin: auto 0;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 55px;
+        width: 65%;
+        margin-left: 12.5%;
+        border-left: 2px solid $border-color;
+    
+        &_nav {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+    }
+
+    &__account {
+        display: flex;
+        width: 22.5%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 55px;
+        border-left: 2px solid $border-color;
+    }
+
+    &__search {
+        width: 27px;
+        height: 27px;
+        border: 2px solid $border-color;
+
+        svg {
+            transform: scale(0.8);
+        }
+    }
+
+    &__content {
+        display: flex;
+        width: 72.5%;
+        margin: auto 37px;
+
+        &__link {
+            display: flex;
+            margin-left: 80px !important;
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
 }

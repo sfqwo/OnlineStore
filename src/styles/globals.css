@@ -40,6 +40,7 @@ select,
 textarea,
 pre {
   margin: 0;
+  padding: 0;
 }
 td,
 legend,
@@ -52,6 +53,11 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
 }
 
 *,
@@ -68,6 +74,9 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
+  background-color: #22225D;
+  margin: 12px;
+  font-family: "Raleway-Light";
 }
 b,
 strong {
@@ -120,3 +129,10 @@ select:-webkit-autofill:focus {
   background-color: transparent !important;
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
+
+@font-face {
+  font-family: "Raleway-Light";
+  src: url("../assets/fonts/Raleway-Light.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 

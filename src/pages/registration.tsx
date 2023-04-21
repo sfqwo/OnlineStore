@@ -1,4 +1,3 @@
-import LoginForm from '@src/components/form/loginForm/LoginForm';
 import RegistrationForm from '@src/components/form/registrationForm/RegistrationForm';
 import { MetaHead } from '@src/components/metaHead/MetaHead';
 import type { NextPage } from 'next';
@@ -7,7 +6,7 @@ import { useState } from 'react';
 const dataObj = {
   meta: {
     title: 'Online Store',
-    description: 'Вход',
+    description: 'Регистрация',
   }
 };
 

@@ -4,5 +4,16 @@
 
 $_black: #000;
 $_white: #fff;
+$_light: #EFF2A5;
 $_yellow: #f3ca20;
-$_red: red;;
+$_red: red;
+$_blue: #22225D;
+
+
+/*===================================================
+    Default Color
+===================================================*/
+
+$bg-color: $_blue;
+$border-color: $_light;
+$text-color: $_light;
