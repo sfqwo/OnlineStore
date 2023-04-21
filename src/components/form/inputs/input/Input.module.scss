@@ -1,0 +1,33 @@
+@import '@styles/var.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &_input {
+        display: flex;
+        flex-direction: column;
+
+        .input {
+            height: 45px;
+            width: 300px;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid $_black;
+        }
+    }
+    .error {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $_red !important;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+        }
+    }
+}

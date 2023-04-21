@@ -39,25 +39,25 @@ optgroup,
 select,
 textarea,
 pre {
-    margin: 0;
+  margin: 0;
 }
 td,
 legend,
 textarea,
 input,
 fieldset {
-    padding: 0;
+  padding: 0;
 }
 ul,
 ol {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -105,5 +105,18 @@ audio,
 iframe,
 embed,
 object {
-    display: block;
+  display: block;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }

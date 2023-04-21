@@ -1,14 +1,24 @@
-module.exports = () => {
-  const rewrites = () => {
-    return [
+module.exports = {
+  webpack(config) {
+    const fileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.('.svg'),
+    )
+
+    config.module.rules.push(
       {
-        source: "/hello/:path*",
-        destination: "http://localhost:5000/hello/:path*",
+        ...fileLoaderRule,
+        test: /\.svg$/i,
+        resourceQuery: /url/,
       },
-    ];
-  };
-  return {
-    reactStrictMode: true,
-    rewrites,
-  };
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: { not: /url/ },
+        use: ['@svgr/webpack'],
+      },
+    )
+    fileLoaderRule.exclude = /\.svg$/i
+
+    return config
+  },
 };
