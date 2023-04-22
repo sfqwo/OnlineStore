@@ -21,7 +21,7 @@
         padding: 0 55px;
         margin-left: 12.5vw;
         border-left: $border;
-        width: 70vw;
+        width: 68.5%;
     
         &_nav {
             @include spaceBetween;
@@ -31,6 +31,8 @@
 
     &__account {
         @include spaceBetween;
+        width: 20vw;
+        max-width: 285px;
         align-items: center;
         padding: 0 55px;
         border-left: $border;
