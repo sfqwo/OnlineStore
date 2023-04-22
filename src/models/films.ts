@@ -3,6 +3,13 @@ export interface IFilmsTop{
   total: number,
   totalPages: number,
 }
+
+export interface IFilms{
+  items: Array<IFilm>,
+  total: number,
+  totalPages: number,
+}
+
 export type TGenre = { genre: string };
 
 export interface IFilm{
@@ -14,4 +21,12 @@ export interface IFilm{
   posterUrl: string,
   rating: string,
   year: string
+}
+
+export enum EGenres {
+  triller = 'Триллер',
+  drama = 'Драма',
+  criminal = 'Криминал',
+  melodrama = 'Мелодрама',
+  kids = 'Детские',
 }

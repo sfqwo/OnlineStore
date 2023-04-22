@@ -2,7 +2,7 @@
 
 .header {
     @include spaceBetween;
-    border: $border;
+    border: $dt-border;
     font-family: "Raleway-Light";
     height: 160px;
 
@@ -20,7 +20,7 @@
         @include spaceBetween;
         padding: 0 55px;
         margin-left: 12.5vw;
-        border-left: $border;
+        border-left: $dt-border;
         width: 68.5%;
     
         &_nav {
@@ -35,13 +35,13 @@
         max-width: 285px;
         align-items: center;
         padding: 0 55px;
-        border-left: $border;
+        border-left: $dt-border;
     }
 
     &__search {
         width: 27px;
         height: 27px;
-        border: $border;
+        border: $dt-border;
 
         svg {
             transform: scale(0.8);

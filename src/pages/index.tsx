@@ -1,7 +1,8 @@
+import GenreSliderBlock from '@src/blocks/genreSliderBlock/GenreSliderBlock';
 import MainBlock from '@src/blocks/mainBlock/MainBlock';
 import { MetaHead } from '@src/components/metaHead/MetaHead';
 import Slider from '@src/components/slider/Slider';
-import { IFilmsTop } from '@src/models/films';
+import { IFilm, IFilms, IFilmsTop } from '@src/models/films';
 
 const data = {
   events: [
@@ -20,31 +21,74 @@ const data = {
         везде и сразу» не то, чем кажется.`,
     },
   ],
-  slider1: {
-    title: 'Новинки',
-  },
-
-  slider2: {
-    title: 'Рекомеедации для вас',
-  }
 }
 
-export default function Home({ items }: { items: IFilmsTop }) {
-  console.log(items)
+export default function Home({ top, premieres, genres }: { top: IFilmsTop, premieres: IFilms, genres: {[x: string]: IFilm[]} }) {
+  console.log(top, premieres, genres)
   return (
     <>
       <MetaHead title='Online Store' description="Главная" />
       <main>
-        <MainBlock events={data.events} selection={items.films.slice(0, 4)} />
-        <Slider title={data.slider1.title} items={items.films.slice(4, 12)} />
-        <Slider title={data.slider2.title} items={items.films.slice(12, 20)} />
+        <MainBlock events={data.events} selection={top.films.slice(0, 4)} />
+        <Slider title='Новинки' items={premieres.items} />
+        <Slider title='Рекомендации для вас' items={top.films.slice(4, 12)} />
+        <GenreSliderBlock {...genres} />
+        <Slider title='Рекомендации для вас' items={top.films.slice(12, 20)} />
       </main>
     </>
   )
 }
 
 export async function getStaticProps() {
-  const items: IFilmsTop = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top', {
+  const top: IFilmsTop = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const premieres: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2023&month=APRIL', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const triller: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=1', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const drama: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=2', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const criminal: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=3', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const melodrama: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=4', {
+    method: 'GET',
+    headers: {
+        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+        'Content-Type': 'application/json',
+    },
+  }))?.json();
+
+  const kids: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=6', {
     method: 'GET',
     headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
@@ -54,7 +98,15 @@ export async function getStaticProps() {
 
   return {
     props: {
-      items
+      top,
+      premieres,
+      genres: {
+        triller: triller.items, 
+        drama: drama.items,
+        criminal: criminal.items,
+        melodrama: melodrama.items,
+        kids: kids.items,
+      }
     }
   }
 }

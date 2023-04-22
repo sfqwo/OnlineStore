@@ -40,7 +40,7 @@ const MainBlock: React.FC<IMainBlock> = ({ events, selection }) => {
                 </div>
             </div>
             <div className={styles.selection}>
-                {selection.map(film => <SelectionItem film={film} />)}
+                {selection.map(film => <SelectionItem film={film} key={film.filmId} />)}
             </div>
         </div>
     )

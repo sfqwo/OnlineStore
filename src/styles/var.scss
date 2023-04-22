@@ -11,18 +11,27 @@ $_blue: #22225D;
 
 
 /*===================================================
-    Default Color
+    Dark Theme Color
 ===================================================*/
 
-$bg-color: $_blue;
-$border-color: $_light;
-$text-color: $_light;
+$dt-bg-color: $_blue;
+$dt-border-color: $_light;
+$dt-text-color: $_light;
+
+/*===================================================
+    Light Theme Color
+===================================================*/
+
+$lt-bg-color: $_light;
+$lt-border-color: $_blue;
+$lt-text-color: $_blue;
 
 /*===================================================
     Variables
 ===================================================*/
 
-$border: 2px solid $border-color;
+$dt-border: 2px solid $dt-border-color;
+$lt-border: 2px solid $lt-border-color;
 
 /*===================================================
     Mixins

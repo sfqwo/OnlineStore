@@ -7,11 +7,12 @@ import clsx from 'clsx';
 interface ISelectionItem {
   film: IFilm,
   isSlider?: boolean,
+  isGenre?: boolean,
 }
 
-const SelectionItem = ({ film, isSlider = false }: ISelectionItem) => {
+const SelectionItem = ({ film, isSlider = false, isGenre = false }: ISelectionItem) => {
   return(
-    <Link href='/' className={clsx(styles.film, isSlider && styles.slider)}>
+    <Link href='/' className={clsx(styles.film, isSlider && styles.slider, isGenre && styles.genre)}>
       <div className={styles.film_info}>{film.nameRu}</div>
       <div className={styles.film_info}>
         {film.year}

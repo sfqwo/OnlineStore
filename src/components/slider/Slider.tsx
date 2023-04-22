@@ -15,7 +15,7 @@ const Slider: React.FC<ISlider> = ({ title, items }) => {
     <>
       <div className={styles.title}>{title}</div>
       <Swiper
-      modules={[Autoplay]}
+        modules={[Autoplay]}
         spaceBetween={-1}
         slidesPerView={4}
         loop={true}
@@ -23,9 +23,11 @@ const Slider: React.FC<ISlider> = ({ title, items }) => {
           delay: 3000,
         }}
       >
-        {items?.map(item => <SwiperSlide>
-          <SelectionItem film={item} isSlider />
-        </SwiperSlide>)}
+        {items?.map(item => (
+          <SwiperSlide key={item.filmId}>
+            <SelectionItem film={item} isSlider />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

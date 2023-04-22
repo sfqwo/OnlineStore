@@ -3,7 +3,7 @@
 .film {
     position: relative;
     width: 25%;
-    border: $border;
+    border: $dt-border;
     border-width: 0 2px 0 0;
     padding: 16px 20px;
     @include column;
@@ -34,7 +34,7 @@
         height: 27px;
         padding: 5px;
         transform: rotate(-90deg) ;
-        border: $border;
+        border: $dt-border;
         border-width: 2px 2px 0 0;
     }
 }
@@ -43,4 +43,22 @@
     width: 100%;
     border-width: 2px;
     height: 320px;
+}
+
+.genre {
+    width: 270px;
+    height: 270px;
+    border-width: 2px;
+    border-top: none;
+    &:last-child {
+        border-right: $dt-border;
+    }
+
+    &:nth-child(2n + 1){
+        border-right: none;
+    }
+
+    &:nth-child(-n + 2){
+        border-top: $dt-border;
+    }
 }

@@ -1,0 +1,22 @@
+@import '@styles/var.scss';
+
+.block {
+    @include row;
+    margin-top: 45px;
+
+    &_link {
+        @include row;
+        align-items: flex-end;
+        justify-content: end;
+        text-transform: uppercase;
+        border: $dt-border;
+        border-left: none;
+        width: 100%;
+        padding: 9px;
+
+        svg {
+            transform: rotate(-90deg);
+            margin-left: 5px;
+        }
+    }
+}
