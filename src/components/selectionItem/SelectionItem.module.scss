@@ -1,0 +1,46 @@
+@import '@styles/var.scss';
+
+.film {
+    position: relative;
+    width: 25%;
+    border: $border;
+    border-width: 0 2px 0 0;
+    padding: 16px 20px;
+    @include column;
+    @include spaceBetween;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &_info {
+        margin-bottom: 20px;
+    }
+
+    &_img {
+        width: 206px;
+        height: 143px;
+        background-position: start;
+        background-size: 100%;
+        background-clip: padding-box;
+        background-repeat: no-repeat;
+    }
+    &::after {
+        content: url('../../assets/icons/link.svg');
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 27px;
+        height: 27px;
+        padding: 5px;
+        transform: rotate(-90deg) ;
+        border: $border;
+        border-width: 2px 2px 0 0;
+    }
+}
+
+.slider {
+    width: 100%;
+    border-width: 2px;
+    height: 320px;
+}

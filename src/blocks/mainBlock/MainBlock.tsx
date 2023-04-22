@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LinkSvg from '@assets/icons/link.svg';
 import { IFilm } from '@src/models/films';
+import SelectionItem from '@src/components/selectionItem/SelectionItem';
 
 type TEvent = {
     title: string;
@@ -39,17 +40,7 @@ const MainBlock: React.FC<IMainBlock> = ({ events, selection }) => {
                 </div>
             </div>
             <div className={styles.selection}>
-                {selection.map(film => (
-                    <Link href='/' className={styles.selection__film}>
-                        <div className={styles.selection__film_info}>{film.nameRu}</div>
-                        <div className={styles.selection__film_info}>
-                            {film.year}
-                            <br/>
-                            {film.genres.map(g => g.genre + ',  ')}
-                            </div>
-                        <div style={{ backgroundImage: `url(${film.posterUrl})`}} className={styles.selection__film_img} />
-                    </Link>
-                ))}
+                {selection.map(film => <SelectionItem film={film} />)}
             </div>
         </div>
     )
