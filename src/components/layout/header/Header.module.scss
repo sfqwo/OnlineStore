@@ -1,13 +1,12 @@
 @import '@styles/var.scss';
 
 .header {
-    display: flex;
-    border: 2px solid $border-color;
+    @include spaceBetween;
+    border: $border;
     font-family: "Raleway-Light";
     height: 160px;
 
     a {
-        color: $text-color;
         text-decoration: none;
         font-size: 16px;
         line-height: 18px;
@@ -18,33 +17,29 @@
     }
 
     &__menu {
-        display: flex;
-        justify-content: space-between;
+        @include spaceBetween;
         padding: 0 55px;
-        width: 65%;
-        margin-left: 12.5%;
-        border-left: 2px solid $border-color;
+        margin-left: 12.5vw;
+        border-left: $border;
+        width: 70vw;
     
         &_nav {
-            display: flex;
-            justify-content: space-between;
-            width: 60%;
+            @include spaceBetween;
+            width: 35vw;
         }
     }
 
     &__account {
-        display: flex;
-        width: 22.5%;
+        @include spaceBetween;
         align-items: center;
-        justify-content: space-between;
         padding: 0 55px;
-        border-left: 2px solid $border-color;
+        border-left: $border;
     }
 
     &__search {
         width: 27px;
         height: 27px;
-        border: 2px solid $border-color;
+        border: $border;
 
         svg {
             transform: scale(0.8);
@@ -53,7 +48,6 @@
 
     &__content {
         display: flex;
-        width: 72.5%;
         margin: auto 37px;
 
         &__link {

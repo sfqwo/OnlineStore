@@ -77,6 +77,16 @@ body {
   background-color: #22225D;
   margin: 12px;
   font-family: "Raleway-Light";
+  color: #EFF2A5;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: #EFF2A5;
+  text-decoration: none;
 }
 b,
 strong {

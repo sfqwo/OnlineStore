@@ -17,3 +17,28 @@ $_blue: #22225D;
 $bg-color: $_blue;
 $border-color: $_light;
 $text-color: $_light;
+
+/*===================================================
+    Variables
+===================================================*/
+
+$border: 2px solid $border-color;
+
+/*===================================================
+    Mixins
+===================================================*/
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}

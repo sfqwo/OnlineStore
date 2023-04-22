@@ -1,11 +1,5 @@
 import { MetaHead } from '@src/components/metaHead/MetaHead';
-
-interface IFilmsTop{
-  films: Array<any>,
-  total: number,
-  totalPages: number,
-}
-
+import { IFilmsTop } from '@src/models/films';
 
 export default function Films({ items }: { items: IFilmsTop }) {
   const { films } = items;
@@ -14,7 +8,6 @@ export default function Films({ items }: { items: IFilmsTop }) {
       <MetaHead title='Online Store' description="Главная" />
       <main>
         ГЛАВНАЯ
-        {films?.map((film) => <div>{film.nameRu}</div>)}
       </main>
     </>
   )
