@@ -1,0 +1,15 @@
+@import '@styles/var.scss';
+
+.footer {
+    margin-top: 180px;
+    @include column;
+
+    &__links {
+        @include row;
+        margin: 0 auto;
+
+        svg {
+            margin: 0 13px;
+        }
+    }
+}
