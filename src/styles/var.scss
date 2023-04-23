@@ -2,8 +2,6 @@
     Local colors
 ===================================================*/
 
-$_black: #000;
-$_white: #fff;
 $_light: #EFF2A5;
 $_yellow: #f3ca20;
 $_red: red;
@@ -50,4 +48,15 @@ $lt-border: 2px solid $lt-border-color;
 @mixin spaceBetween {
     display: flex;
     justify-content: space-between;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin centerSelf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

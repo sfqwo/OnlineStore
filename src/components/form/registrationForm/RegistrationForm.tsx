@@ -25,7 +25,7 @@ const RegisterForm = () => {
       <input type="submit" />
       <div>
         Есть аккаунт?
-        <Link href='/login'>Войдите</Link>
+        <Link href='/'>Войдите</Link>
       </div>
     </form>
   );

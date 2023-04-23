@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SearchSvg from '@assets/icons/search.svg';
 import BurgerSvg from '@assets/icons/burger.svg';
 import LinkSvg from '@assets/icons/link.svg';
+import Modal from '@src/components/modal/Modal';
+import LoginBlock from '@src/blocks/loginBlock/LoginBlock';
 
 const Header = () => {
   const router = useRouter();
   const handleClick = (e: any) => console.log(e)
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <div className={styles.header}>
       { router.pathname === '/' ? (
@@ -19,7 +22,7 @@ const Header = () => {
           <Link href="/">Избранное</Link>
           <Link href="/">Детям</Link>
         </div>
-        <Link href="/login">Вход/Регистрация</Link>
+        <button onClick={() => setIsOpenModal(true)}>Вход/Регистрация</button>
       </div>
       ) : (
         <div className={styles.header__content}>
@@ -38,6 +41,7 @@ const Header = () => {
           <SearchSvg />
         </button>
       </div>
+      <LoginBlock isOpenModal={isOpenModal} handleCloseModal={() => setIsOpenModal(false)} />
     </div>
   )
 }

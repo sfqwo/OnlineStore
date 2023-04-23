@@ -1,0 +1,12 @@
+@import '@styles/var.scss';
+
+.link {
+    text-transform: uppercase;
+    @include centerSelf;
+
+    a {
+        text-decoration: underline;
+        color: $lt-text-color !important;
+        margin-left: 6px;
+    }
+}

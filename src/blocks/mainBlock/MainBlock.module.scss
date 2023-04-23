@@ -22,8 +22,7 @@
                 position: absolute;
                 bottom: 0;
                 right: 0;
-                display: flex;
-                align-items: center;
+                @include center;
                 border: $dt-border;
                 border-width: 2px 0 0 2px;
                 padding: 9px 17px;

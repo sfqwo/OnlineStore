@@ -1,33 +1,76 @@
 @import '@styles/var.scss';
 
+$hidden-color: #989985;
+$border-bottom: 2px solid $hidden-color;
+$transition: all .4s ease;
+
 .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    position: relative;
+    @include row;
+    @include center;
+    border: $lt-border;
+    width: 570px;
+    max-width: 570px;
+    
+    & + & {
+        border-top: none;
+    }
 
     &_input {
         display: flex;
         flex-direction: column;
+        padding: 11px 30px;
 
         .input {
-            height: 45px;
-            width: 300px;
+            height: 67px;
+            display: block;
+            width: 506px;
             font-size: 20px;
             border: none;
             outline: none;
-            border-bottom: 1px solid $_black;
-        }
-    }
-    .error {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        color: $_red !important;
+            color: $lt-text-color;
+            border-bottom: $border-bottom;
+            background-color: $lt-bg-color;
+            transition: $transition;
 
-        svg {
-            width: 15px;
-            height: 15px;
-            margin-right: 10px;
+            &:focus, &:hover {
+                border-bottom: $lt-border;
+
+                & + .label {
+                    color: $lt-text-color;
+                }
+            }
+        }
+
+        .label {
+            margin: 14px 0 0 3px;
+            text-transform: uppercase;
+            color: $hidden-color;
+            transition: $transition;   
         }
     }
+
+    .hide_button {
+        position: absolute;
+        right: 30px;
+        bottom: 55px;
+        color: $hidden-color;
+        transition: $transition;
+
+        &_active {
+            color: $lt-border-color;
+        }
+    }
+    // .error {
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //     color: $_red !important;
+
+    //     svg {
+    //         width: 15px;
+    //         height: 15px;
+    //         margin-right: 10px;
+    //     }
+    // }
 }

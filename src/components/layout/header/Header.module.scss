@@ -6,6 +6,13 @@
     font-family: "Raleway-Light";
     height: 160px;
 
+    button {
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        text-transform: uppercase;
+    }
+
     a {
         text-decoration: none;
         font-size: 16px;
@@ -33,7 +40,7 @@
         @include spaceBetween;
         width: 20vw;
         max-width: 285px;
-        align-items: center;
+        @include center;
         padding: 0 55px;
         border-left: $dt-border;
     }

@@ -1,9 +1,11 @@
-import React, { HTMLInputTypeAttribute } from 'react';
+import React, { HTMLInputTypeAttribute, useState } from 'react';
 import { UseFormRegister, ValidationRule } from 'react-hook-form';
 import { TError } from '@components/form/types';
 import styles from './Input.module.scss';
 import ErrorSvg from '@assets/icons/inputError.svg'
+import HideSvg from '@assets/icons/Eye-closed.svg'
 import { validateLimits, validateMaxLength, validateMinLength, validatePatterns } from '@src/utils/validateInputs';
+import clsx from 'clsx';
 
 interface ITextInput {
   name: string,
@@ -19,6 +21,11 @@ interface ITextInput {
   minLength?: number,
 }
 
+const inputType = (type: HTMLInputTypeAttribute, hidePassword: boolean) => {
+  if (type === 'password') return hidePassword ? type : 'text';
+  return type;
+}
+
 const Input: React.FC<ITextInput> = ({
   name,
   register,
@@ -32,13 +39,13 @@ const Input: React.FC<ITextInput> = ({
   maxLength,
   minLength,
 }) => {
+  const [hidePassword, setHidePassword] = useState(true);
   const lim = limit && validateLimits[limit];
   return(
     <div className={styles.container}>
       <div className={styles.container_input}>
-        <label htmlFor={name}>{label}</label>
         <input
-          type={type}
+          type={inputType(type, hidePassword)}
           className={styles.input}
           {...register(name, {
             required: required && validatePatterns.required,
@@ -47,16 +54,17 @@ const Input: React.FC<ITextInput> = ({
             minLength: validateMinLength(minLength || 3),
             ...lim
           })}
-          defaultValue={defaultValue}
-          autoComplete='new-password'
+          defaultValue={defaultValue || ''}
+          readOnly
+          onFocus={(e) =>e.target.removeAttribute('readonly')}
         />
+        <label className={styles.label} htmlFor={name}>{label}</label>
+        {type === 'password' && (
+          <button onClick={() => setHidePassword(!hidePassword)} className={clsx(styles.hide_button, hidePassword || styles.hide_button_active)}>
+            <HideSvg />
+          </button>
+        )}
       </div>
-      {error && (
-        <div className={styles.error}>
-          <ErrorSvg />
-          {error?.message}
-        </div>
-      )}
     </div>
   )
 }
