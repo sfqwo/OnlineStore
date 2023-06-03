@@ -2,11 +2,10 @@
     Local colors
 ===================================================*/
 
-$_light: #EFF2A5;
+$_light: #eff2a5;
 $_yellow: #f3ca20;
 $_red: rgb(138, 0, 0);
-$_blue: #22225D;
-
+$_blue: #22225d;
 
 /*===================================================
     Dark Theme Color
@@ -37,27 +36,27 @@ $error: $_red;
 ===================================================*/
 
 @mixin row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin spaceBetween {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 @mixin center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @mixin centerSelf {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

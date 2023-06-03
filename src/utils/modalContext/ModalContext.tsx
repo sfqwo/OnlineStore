@@ -14,14 +14,14 @@ enum EModalTitle {
 }
 
 export type TModalData = {
-  type: TModalType,
-  isOpen?: boolean,
+  type: TModalType;
+  isOpen?: boolean;
 };
 
 export interface IModalDataContext {
-  type: TModalType,
-  handleOpen: (type: TModalType) => void,
-  handleClose: () => void,
+  type: TModalType;
+  handleOpen: (type: TModalType) => void;
+  handleClose: () => void;
 }
 
 export const initialModalData = {
@@ -42,15 +42,16 @@ export const ModalProvider = ({ children }: TFC) => {
     setModalData((ps) => ({ ...ps, isOpen: false }));
   }, [setModalData]);
 
-  const handleOpen = React.useCallback((
-    type: TModalType,
-  ) => {
-    setModalData((ps) => ({
-      ...ps,
-      type: type || defaultType,
-      isOpen: true,
-    }));
-  }, [setModalData]);
+  const handleOpen = React.useCallback(
+    (type: TModalType) => {
+      setModalData((ps) => ({
+        ...ps,
+        type: type || defaultType,
+        isOpen: true,
+      }));
+    },
+    [setModalData],
+  );
 
   const valueMem = React.useMemo(
     () => ({ handleClose, handleOpen, type: modalData.type }),
@@ -59,10 +60,18 @@ export const ModalProvider = ({ children }: TFC) => {
 
   return (
     <ModalContext.Provider value={valueMem}>
-        <>{children}</>
-        <Modal isVisible={modalData.isOpen || false} title={EModalTitle[modalData.type]} onClose={handleClose}>
-          {modalData.type === 'login' ? <LoginForm /> : <RegistrationForm isReg={modalData.type === 'reg'} />}
-        </Modal>
+      <>{children}</>
+      <Modal
+        isVisible={modalData.isOpen || false}
+        title={EModalTitle[modalData.type]}
+        onClose={handleClose}
+      >
+        {modalData.type === 'login' ? (
+          <LoginForm />
+        ) : (
+          <RegistrationForm isReg={modalData.type === 'reg'} />
+        )}
+      </Modal>
     </ModalContext.Provider>
   );
 };

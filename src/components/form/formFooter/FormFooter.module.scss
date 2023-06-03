@@ -1,36 +1,36 @@
 @import '@styles/var.scss';
 
 .container {
-    @include column;
-    margin: 0 auto;
-    max-width: 420px;
+  @include column;
+  margin: 0 auto;
+  max-width: 420px;
 }
 
 .link {
-    text-transform: uppercase;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
 
-    button {
-        display: inline-flex;;
-        text-transform: inherit;
-        text-decoration: underline;
-        font-size: inherit;
-        line-height: inherit;
-        color: $lt-text-color;
-        margin-left: 6px;
-    }
+  button {
+    display: inline-flex;
+    text-transform: inherit;
+    text-decoration: underline;
+    font-size: inherit;
+    line-height: inherit;
+    color: $lt-text-color;
+    margin-left: 6px;
+  }
 }
 
 .politic {
-    text-align: left;
-    font-size: 14px;
-    line-height: 16px;
-    margin-top: 16px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 16px;
 
-    a {
-        color: $lt-text-color;
-        text-decoration: underline;
-    }
+  a {
+    color: $lt-text-color;
+    text-decoration: underline;
+  }
 }

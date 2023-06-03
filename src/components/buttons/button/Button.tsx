@@ -1,17 +1,24 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import styles from './Button.module.scss';
-import LinkSvg from '@assets/icons/link.svg';
+import React from 'react';
 import clsx from 'clsx';
 
+import LinkSvg from '@assets/icons/link.svg';
+import styles from './Button.module.scss';
+
 interface ISubmitButton {
-	title: string;
-  type?: "button" | "submit" | "reset";
+  title: string;
+  type?: 'button' | 'submit' | 'reset';
   isDisabled?: boolean;
-	onClick?: () => void;
+  onClick?: () => void;
   classes?: string;
 }
 
-const Button: React.FC<ISubmitButton> = ({ title, type = 'button', onClick, isDisabled = false, classes }) => (
+const Button: React.FC<ISubmitButton> = ({
+  title,
+  type = 'button',
+  onClick,
+  isDisabled = false,
+  classes,
+}) => (
   <button
     type={type}
     onClick={onClick}

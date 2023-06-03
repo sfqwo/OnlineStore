@@ -6,8 +6,8 @@ import Head from 'next/head';
 // import iconsvg from '@assets/image/favicon/safari-pinned-tab.svg';
 
 export const MetaHead: React.FC<{
-    title: string,
-    description: string
+  title: string;
+  description: string;
 }> = ({ title, description }) => (
   <Head>
     <title>{title}</title>
@@ -22,4 +22,3 @@ export const MetaHead: React.FC<{
     <meta name="theme-color" content="#ffffff" />
   </Head>
 );
-

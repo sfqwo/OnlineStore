@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react';
-import styles from './MainBlock.module.scss'
 import Link from 'next/link';
+
 import LinkSvg from '@assets/icons/link.svg';
-import { IFilm } from '@src/models/films';
 import SelectionItem from '@src/components/selectionItem/SelectionItem';
+import { IFilm } from '@src/models/films';
+import styles from './MainBlock.module.scss';
 
 type TEvent = {
   title: string;
   content: string;
-}
+};
 
 interface IMainBlock {
   events: TEvent[];
@@ -21,9 +22,9 @@ const MainBlock: React.FC<IMainBlock> = ({ events, selection }) => {
       <div className={styles.info}>
         <div className={styles.info__main}>
           <div className={styles.info__main_title}>
-            Главные премьеры месяца <br/> на ваших экранах
+            Главные премьеры месяца <br /> на ваших экранах
           </div>
-          <Link href='/' className={styles.info__main_subscribe}>
+          <Link href="/" className={styles.info__main_subscribe}>
             Оформить подписку
             <LinkSvg />
           </Link>
@@ -39,9 +40,11 @@ const MainBlock: React.FC<IMainBlock> = ({ events, selection }) => {
         </div>
       </div>
       <div className={styles.selection}>
-        {selection.map(film => <SelectionItem film={film} key={film.filmId} />)}
+        {selection.map((film) => (
+          <SelectionItem film={film} key={film.filmId} />
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 export default MainBlock;

@@ -21,91 +21,116 @@ const data = {
         везде и сразу» не то, чем кажется.`,
     },
   ],
-}
+};
 
-export default function Home({ top, premieres, genres }: { top: IFilmsTop, premieres: IFilms, genres: {[x: string]: IFilm[]} }) {
+export default function Home({
+  top,
+  premieres,
+  genres,
+}: {
+  top: IFilmsTop;
+  premieres: IFilms;
+  genres: { [x: string]: IFilm[] };
+}) {
   return (
     <>
-      <MetaHead title='Online Store' description="Главная" />
+      <MetaHead title="Online Store" description="Главная" />
       <main>
         <MainBlock events={data.events} selection={top.films.slice(0, 4)} />
-        <Slider title='Новинки' items={premieres.items} delay={2000} />
-        <Slider title='Рекомендации для вас' items={top.films.slice(4, 12)} />
+        <Slider title="Новинки" items={premieres.items} delay={2000} />
+        <Slider title="Рекомендации для вас" items={top.films.slice(4, 12)} />
         <GenreSliderBlock {...genres} />
-        <Slider title='Рекомендации для вас' items={top.films.slice(12, 20)} delay={4000} />
+        <Slider title="Рекомендации для вас" items={top.films.slice(12, 20)} delay={4000} />
       </main>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const top: IFilmsTop = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top', {
-    method: 'GET',
-    headers: {
+  const top: IFilmsTop = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
-  const premieres: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2023&month=APRIL', {
-    method: 'GET',
-    headers: {
-        'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
-        'Content-Type': 'application/json',
-    },
-  }))?.json();
+  const premieres: IFilms = await (
+    await fetch(
+      'https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2023&month=APRIL',
+      {
+        method: 'GET',
+        headers: {
+          'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+  )?.json();
 
-  const triller: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=1', {
-    method: 'GET',
-    headers: {
+  const triller: IFilms = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=1', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
-  const drama: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=2', {
-    method: 'GET',
-    headers: {
+  const drama: IFilms = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=2', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
-  const criminal: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=3', {
-    method: 'GET',
-    headers: {
+  const criminal: IFilms = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=3', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
-  const melodrama: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=4', {
-    method: 'GET',
-    headers: {
+  const melodrama: IFilms = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=4', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
-  const kids: IFilms = await (await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=6', {
-    method: 'GET',
-    headers: {
+  const kids: IFilms = await (
+    await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=6', {
+      method: 'GET',
+      headers: {
         'X-API-KEY': '64273f98-5720-489f-8cf8-fe9e2f83bd18',
         'Content-Type': 'application/json',
-    },
-  }))?.json();
+      },
+    })
+  )?.json();
 
   return {
     props: {
       top,
       premieres,
       genres: {
-        triller: triller.items, 
+        triller: triller.items,
         drama: drama.items,
         criminal: criminal.items,
         melodrama: melodrama.items,
         kids: kids.items,
-      }
-    }
-  }
+      },
+    },
+  };
 }

@@ -7,13 +7,18 @@ import FormFooter from '@components/form/formFooter/FormFooter';
 import { useModalContext } from '@src/utils/modalContext/ModalContext';
 
 type TInputs = {
-  email: string,
-  password: string,
-}
+  email: string;
+  password: string;
+};
 
 const LoginForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<TInputs>({
-    mode: 'onBlur', reValidateMode: 'onChange'
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TInputs>({
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
   });
   const onSubmit: SubmitHandler<TInputs> = (data) => console.log(data);
   const { handleOpen } = useModalContext();
@@ -34,11 +39,11 @@ const LoginForm = () => {
         name="password"
         type="password"
         required
-        label='Пароль'
+        label="Пароль"
       />
       <SubmitButton isDisabled={!!Object.values(errors).length} />
       <FormFooter isReg={false} changeForm={() => handleOpen('reg')} />
     </form>
   );
-}
+};
 export default LoginForm;

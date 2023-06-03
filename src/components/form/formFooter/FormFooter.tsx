@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import styles from './FormFooter.module.scss'
+import styles from './FormFooter.module.scss';
 
 interface IFormFooter {
   isReg?: boolean;
@@ -24,15 +24,12 @@ const FormFooter = ({ isReg = false, changeForm }: IFormFooter) => {
         )}
       </div>
       <span className={styles.politic}>
-        Продолжая, я соглашаюсь c
-        &nbsp;
-        <Link href='/'>Пользовательским соглашением</Link>
-        &nbsp;
-        и
-        &nbsp;
-        <Link href='/'>Политикой конфиденциальности</Link>
+        Продолжая, я соглашаюсь c &nbsp;
+        <Link href="/">Пользовательским соглашением</Link>
+        &nbsp; и &nbsp;
+        <Link href="/">Политикой конфиденциальности</Link>
       </span>
     </div>
-  )
-}
+  );
+};
 export default FormFooter;

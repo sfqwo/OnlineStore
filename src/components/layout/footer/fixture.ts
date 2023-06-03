@@ -1,4 +1,4 @@
-import { IBlock } from "./types";
+import { IBlock } from './types';
 import InstagramSvg from '@assets/icons/Instagram.svg';
 import TelegramSvg from '@assets/icons/Telegram.svg';
 import VKSvg from '@assets/icons/Vk.svg';
@@ -44,7 +44,7 @@ export const content = [
         title: 'Политика конфиденциальности',
         href: '/',
       },
-    ]
+    ],
   },
   {
     title: 'Разделы',
@@ -69,7 +69,7 @@ export const content = [
         title: 'Детям',
         href: '/',
       },
-    ]
+    ],
   },
   {
     title: 'Другое',
@@ -82,7 +82,7 @@ export const content = [
         title: 'Сертификаты',
         href: '/',
       },
-    ]
+    ],
   },
   {
     title: 'Поддержка пользователей',
@@ -110,5 +110,5 @@ export const links = [
   {
     Icon: YoutubeSvg,
     href: 'https://www.youtube.com/',
-  }
-]
+  },
+];

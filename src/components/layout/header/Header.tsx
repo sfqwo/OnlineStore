@@ -10,29 +10,29 @@ import { useModalContext } from '@src/utils/modalContext/ModalContext';
 
 const Header = () => {
   const router = useRouter();
-  const handleClick = (e: any) => console.log(e)
+  const handleClick = (e: any) => console.log(e);
 
   const { handleOpen } = useModalContext();
 
   return (
     <div className={styles.header}>
-      { router.pathname === '/' ? (
+      {router.pathname === '/' ? (
         <div className={styles.header__menu}>
-        <div className={styles.header__menu_nav}>
-          <Link href="/">Главное</Link>
-          <Link href="/">Магазин</Link>
-          <Link href="/">Избранное</Link>
-          <Link href="/">Детям</Link>
+          <div className={styles.header__menu_nav}>
+            <Link href="/">Главное</Link>
+            <Link href="/">Магазин</Link>
+            <Link href="/">Избранное</Link>
+            <Link href="/">Детям</Link>
+          </div>
+          <button onClick={() => handleOpen('login')}>Вход/Регистрация</button>
         </div>
-        <button onClick={() => handleOpen('login')}>Вход/Регистрация</button>
-      </div>
       ) : (
         <div className={styles.header__content}>
           <button onClick={handleClick}>
             <BurgerSvg />
           </button>
-          <Link href='/' className={styles.header__content__link}>
-          <LinkSvg />
+          <Link href="/" className={styles.header__content__link}>
+            <LinkSvg />
             ПОДБОРКА: РЕКОМЕНДАЦИИ
           </Link>
         </div>
@@ -44,6 +44,6 @@ const Header = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 export default Header;

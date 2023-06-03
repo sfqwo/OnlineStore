@@ -8,8 +8,11 @@ body {
 }
 
 :root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
   --font-serif: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 }
 body {
@@ -77,10 +80,10 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
-  background-color: #22225D;
+  background-color: #22225d;
   margin: 12px;
-  font-family: "Raleway-Light";
-  color: #EFF2A5;
+  font-family: 'Raleway-Light';
+  color: #eff2a5;
 }
 
 ::-webkit-scrollbar {
@@ -88,7 +91,7 @@ body {
 }
 
 a {
-  color: #EFF2A5;
+  color: #eff2a5;
   text-decoration: none;
 }
 b,
@@ -140,15 +143,15 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0px 1000px #EFF2A5 inset !important;
-  color: #22225D !important;
+  -webkit-box-shadow: 0 0 0px 1000px #eff2a5 inset !important;
+  color: #22225d !important;
 }
 
 @font-face {
-  font-family: "Raleway-Light";
-  src: url("../assets/fonts/Raleway-Light.ttf") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
+  font-family: 'Raleway-Light';
+  src: url('../assets/fonts/Raleway-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
 
 div {

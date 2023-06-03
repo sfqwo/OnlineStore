@@ -1,71 +1,71 @@
 @import '@styles/var.scss';
 
 .header {
+  @include spaceBetween;
+  border: $dt-border;
+  font-family: 'Raleway-Light';
+  height: 160px;
+
+  button {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto 0;
+  }
+
+  &__menu {
     @include spaceBetween;
+    padding: 0 55px;
+    margin-left: 12.5vw;
+    border-left: $dt-border;
+    width: 68.5%;
+
+    &_nav {
+      @include spaceBetween;
+      width: 35vw;
+    }
+  }
+
+  &__account {
+    @include spaceBetween;
+    width: 20vw;
+    max-width: 285px;
+    @include center;
+    padding: 0 55px;
+    border-left: $dt-border;
+  }
+
+  &__search {
+    width: 27px;
+    height: 27px;
     border: $dt-border;
-    font-family: "Raleway-Light";
-    height: 160px;
 
-    button {
-        color: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        text-transform: uppercase;
+    svg {
+      transform: scale(0.8);
     }
+  }
 
-    a {
-        text-decoration: none;
-        font-size: 16px;
-        line-height: 18px;
-        text-transform: uppercase;
-        text-align: center;
-        vertical-align: middle;
-        margin: auto 0;
+  &__content {
+    display: flex;
+    margin: auto 37px;
+
+    &__link {
+      display: flex;
+      margin-left: 80px !important;
+
+      svg {
+        margin-right: 10px;
+      }
     }
-
-    &__menu {
-        @include spaceBetween;
-        padding: 0 55px;
-        margin-left: 12.5vw;
-        border-left: $dt-border;
-        width: 68.5%;
-    
-        &_nav {
-            @include spaceBetween;
-            width: 35vw;
-        }
-    }
-
-    &__account {
-        @include spaceBetween;
-        width: 20vw;
-        max-width: 285px;
-        @include center;
-        padding: 0 55px;
-        border-left: $dt-border;
-    }
-
-    &__search {
-        width: 27px;
-        height: 27px;
-        border: $dt-border;
-
-        svg {
-            transform: scale(0.8);
-        }
-    }
-
-    &__content {
-        display: flex;
-        margin: auto 37px;
-
-        &__link {
-            display: flex;
-            margin-left: 80px !important;
-
-            svg {
-                margin-right: 10px;
-            }
-        }
-    }
+  }
 }

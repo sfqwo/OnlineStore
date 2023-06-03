@@ -1,6 +1,6 @@
 export interface IBlockLink {
   title: string;
-  href: string; 
+  href: string;
 }
 
 export interface IBlock {

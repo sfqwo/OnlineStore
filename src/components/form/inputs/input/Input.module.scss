@@ -2,84 +2,90 @@
 
 $hidden-color: #989985;
 $border-bottom: 2px solid $hidden-color;
-$transition: all .4s ease;
+$transition: all 0.4s ease;
 
 .container {
-    position: relative;
-    @include row;
-    @include center;
-    border: $lt-border;
-    width: 570px;
-    max-width: 570px;
-    
-    &_hidden { display: none }
-   
-    & + & { border-top: none }
+  position: relative;
+  @include row;
+  @include center;
+  border: $lt-border;
+  width: 570px;
+  max-width: 570px;
 
-    &_hidden + & { border-top: $lt-border }
+  &_hidden {
+    display: none;
+  }
 
-    &_input {
+  & + & {
+    border-top: none;
+  }
+
+  &_hidden + & {
+    border-top: $lt-border;
+  }
+
+  &_input {
+    display: flex;
+    flex-direction: column;
+    padding: 11px 30px;
+
+    .input {
+      height: 67px;
+      display: block;
+      width: 506px;
+      font-size: 20px;
+      border: none;
+      outline: none;
+      color: $lt-text-color;
+      border-bottom: $border-bottom;
+      background-color: $lt-bg-color;
+      transition: $transition;
+
+      &:focus,
+      &:hover {
+        border-bottom: $lt-border;
+
+        & + .label {
+          color: $lt-text-color;
+        }
+
+        & + .label_error {
+          color: $error;
+        }
+      }
+    }
+
+    .label {
+      margin: 14px 0 0 3px;
+      text-transform: uppercase;
+      color: $hidden-color;
+      transition: $transition;
+
+      &_error {
+        color: $error;
         display: flex;
-        flex-direction: column;
-        padding: 11px 30px;
+        align-items: center;
 
-        .input {
-            height: 67px;
-            display: block;
-            width: 506px;
-            font-size: 20px;
-            border: none;
-            outline: none;
-            color: $lt-text-color;
-            border-bottom: $border-bottom;
-            background-color: $lt-bg-color;
-            transition: $transition;
-
-            &:focus, &:hover {
-                border-bottom: $lt-border;
-
-                & + .label {
-                    color: $lt-text-color;
-                }
-
-                & + .label_error {
-                    color: $error;
-                }
-
-            }
+        svg {
+          display: inline-block;
+          margin-right: 5px;
+          width: 15px;
+          height: 18px;
         }
-
-        .label {
-            margin: 14px 0 0 3px;
-            text-transform: uppercase;
-            color: $hidden-color;
-            transition: $transition;
-
-            &_error {
-                color: $error;
-                display: flex;
-                align-items: center;
-
-                svg {
-                    display: inline-block;
-                    margin-right: 5px;
-                    width: 15px;
-                    height: 18px;
-                    
-                }
-            }
-        }
+      }
     }
+  }
 
-    .hide_button {
-        position: absolute;
-        right: 30px;
-        bottom: 55px;
-        color: $hidden-color;
-        transition: $transition;
+  .hide_button {
+    position: absolute;
+    right: 30px;
+    bottom: 55px;
+    color: $hidden-color;
+    transition: $transition;
 
-        &_active, &:hover {
-            color: $lt-border-color;
-        }
+    &_active,
+    &:hover {
+      color: $lt-border-color;
     }
+  }
 }

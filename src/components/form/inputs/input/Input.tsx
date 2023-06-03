@@ -1,38 +1,43 @@
 import React, { HTMLInputTypeAttribute, useState } from 'react';
 import { FieldError, UseFormRegister, ValidationRule } from 'react-hook-form';
 import styles from './Input.module.scss';
-import ErrorSvg from '@assets/icons/inputError.svg'
-import HideSvg from '@assets/icons/Eye-closed.svg'
-import { validateLimits, validateMaxLength, validateMinLength, validatePatterns } from '@src/utils/validateInputs';
+import ErrorSvg from '@assets/icons/inputError.svg';
+import HideSvg from '@assets/icons/Eye-closed.svg';
+import {
+  validateLimits,
+  validateMaxLength,
+  validateMinLength,
+  validatePatterns,
+} from '@src/utils/validateInputs';
 import clsx from 'clsx';
 
 interface ITextInput {
-  name: string,
-  label: string,
-  register: UseFormRegister<any>,
-  type?: HTMLInputTypeAttribute,
-  required?: boolean,
-  error?: FieldError,
-  defaultValue?: string,
-  limit?: keyof(typeof validateLimits),
-  pattern?: keyof (typeof validatePatterns),
-  beEqual?: string,
-  maxLength?: number,
-  minLength?: number,
-  hidden?: boolean,
+  name: string;
+  label: string;
+  register: UseFormRegister<any>;
+  type?: HTMLInputTypeAttribute;
+  required?: boolean;
+  error?: FieldError;
+  defaultValue?: string;
+  limit?: keyof typeof validateLimits;
+  pattern?: keyof typeof validatePatterns;
+  beEqual?: string;
+  maxLength?: number;
+  minLength?: number;
+  hidden?: boolean;
 }
 
 const inputType = (type: HTMLInputTypeAttribute, hidePassword: boolean) => {
   if (type === 'password') return hidePassword ? type : 'text';
   return type;
-}
+};
 
 const Input: React.FC<ITextInput> = ({
   name,
   register,
   required = false,
   defaultValue,
-  type="text",
+  type = 'text',
   label,
   pattern,
   limit,
@@ -47,13 +52,15 @@ const Input: React.FC<ITextInput> = ({
   const lim = limit && validateLimits[limit];
   const inputRegister = register(name, {
     required: required && validatePatterns.required,
-    pattern: (beEqual ? validatePatterns.beEqual(beEqual) : (pattern && validatePatterns[pattern])) as ValidationRule<RegExp>,
+    pattern: (beEqual
+      ? validatePatterns.beEqual(beEqual)
+      : pattern && validatePatterns[pattern]) as ValidationRule<RegExp>,
     maxLength: validateMaxLength(maxLength || 60),
     minLength: validateMinLength(minLength || 3),
-    ...lim
+    ...lim,
   });
 
-  return(
+  return (
     <div className={clsx(styles.container, hidden && styles.container_hidden)}>
       <div className={styles.container_input}>
         <input
@@ -72,13 +79,18 @@ const Input: React.FC<ITextInput> = ({
           }}
           hidden={hidden}
         />
-        <label className={clsx(styles.label, showError && !!error && styles.label_error)} htmlFor={name}>
+        <label
+          className={clsx(styles.label, showError && !!error && styles.label_error)}
+          htmlFor={name}
+        >
           {showError && !!error ? (
             <>
               <ErrorSvg />
               {error.message}
             </>
-          ) : label}
+          ) : (
+            label
+          )}
         </label>
         {type === 'password' && (
           <button
@@ -90,6 +102,6 @@ const Input: React.FC<ITextInput> = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 export default Input;

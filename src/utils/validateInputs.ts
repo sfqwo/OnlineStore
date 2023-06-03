@@ -7,7 +7,7 @@ export const validatePatterns = {
   beEqual: (value: string) => ({
     value: new RegExp(value),
     message: 'Неверное значение',
-  })
+  }),
 };
 
 export const validateLimits = {
@@ -20,19 +20,19 @@ export const validateLimits = {
       value: 65,
       message: 'Возраст не может быть больше 18',
     },
-  }
+  },
 };
 
 export const validateMaxLength = (l: number) => {
   return {
     value: l,
     message: `Максимальная длина ${l} символов`,
-  }
+  };
 };
 
 export const validateMinLength = (l: number) => {
   return {
     value: l,
     message: `Минимальная длина ${l} символа`,
-  }
+  };
 };

@@ -17,8 +17,8 @@ const LinksIcon = (link: ILink) => {
     <Link href={href}>
       <Icon />
     </Link>
-  )
-}
+  );
+};
 
 const Blocks = (block: IBlock, index: number) => (
   <div className={styles.footer__info} key={block.title}>
@@ -28,7 +28,7 @@ const Blocks = (block: IBlock, index: number) => (
       {content.length === index + 1 && (
         <div className={styles.footer__info_buttons}>
           {linkWithUs.map(LinksIcon)}
-          <Button title='чат с поддержкой' />
+          <Button title="чат с поддержкой" />
         </div>
       )}
     </div>
@@ -41,19 +41,15 @@ const Links = (link: ILink) => {
     <Link href={href}>
       <Icon />
     </Link>
-  )
-}
+  );
+};
 
 const Footer = () => {
-  return(
+  return (
     <div className={styles.footer}>
-      <div className={styles.footer__links}>
-        {links.map(Links)}
-      </div>
-      <div className={styles.footer__info_container}>
-        {content.map(Blocks)}
-      </div>
+      <div className={styles.footer__links}>{links.map(Links)}</div>
+      <div className={styles.footer__info_container}>{content.map(Blocks)}</div>
     </div>
-  )
-}
+  );
+};
 export default Footer;
