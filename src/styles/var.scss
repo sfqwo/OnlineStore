@@ -4,7 +4,7 @@
 
 $_light: #EFF2A5;
 $_yellow: #f3ca20;
-$_red: red;
+$_red: rgb(138, 0, 0);
 $_blue: #22225D;
 
 
@@ -30,6 +30,7 @@ $lt-text-color: $_blue;
 
 $dt-border: 2px solid $dt-border-color;
 $lt-border: 2px solid $lt-border-color;
+$error: $_red;
 
 /*===================================================
     Mixins

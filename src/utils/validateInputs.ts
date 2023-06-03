@@ -4,6 +4,10 @@ export const validatePatterns = {
     value: /.+@.+\..+/i,
     message: 'Неверный формат почты',
   },
+  beEqual: (value: string) => ({
+    value: new RegExp(value),
+    message: 'Неверное значение',
+  })
 };
 
 export const validateLimits = {

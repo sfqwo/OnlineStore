@@ -24,7 +24,6 @@ const data = {
 }
 
 export default function Home({ top, premieres, genres }: { top: IFilmsTop, premieres: IFilms, genres: {[x: string]: IFilm[]} }) {
-  console.log(top, premieres, genres)
   return (
     <>
       <MetaHead title='Online Store' description="Главная" />

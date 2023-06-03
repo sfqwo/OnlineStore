@@ -9,18 +9,29 @@ interface IFormFooter {
 
 const FormFooter = ({ isReg = false, changeForm }: IFormFooter) => {
   return (
-    <div className={styles.link}>
-      {isReg ? (
-        <>
-          У вас уже есть аккаунт?
-          <button onClick={changeForm}>Вход</button>
-        </>
-      ) : (
-        <>
-          У вас еще нет аккаунта?
-          <button onClick={changeForm}>Регистрация</button>
-        </>
-      )}
+    <div className={styles.container}>
+      <div className={styles.link}>
+        {isReg ? (
+          <>
+            У вас уже есть аккаунт?
+            <button onClick={changeForm}>Вход</button>
+          </>
+        ) : (
+          <>
+            У вас еще нет аккаунта?
+            <button onClick={changeForm}>Регистрация</button>
+          </>
+        )}
+      </div>
+      <span className={styles.politic}>
+        Продолжая, я соглашаюсь c
+        &nbsp;
+        <a href='/'>Пользовательским соглашением</a>
+        &nbsp;
+        и
+        &nbsp;
+        <a href='/'>Политикой конфиденциальности</a>
+      </span>
     </div>
   )
 }

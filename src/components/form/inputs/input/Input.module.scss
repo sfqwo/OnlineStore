@@ -12,9 +12,11 @@ $transition: all .4s ease;
     width: 570px;
     max-width: 570px;
     
-    & + & {
-        border-top: none;
-    }
+    &_hidden { display: none }
+   
+    & + & { border-top: none }
+
+    &_hidden + & { border-top: $lt-border }
 
     &_input {
         display: flex;
@@ -39,6 +41,11 @@ $transition: all .4s ease;
                 & + .label {
                     color: $lt-text-color;
                 }
+
+                & + .label_error {
+                    color: $error;
+                }
+
             }
         }
 
@@ -46,7 +53,21 @@ $transition: all .4s ease;
             margin: 14px 0 0 3px;
             text-transform: uppercase;
             color: $hidden-color;
-            transition: $transition;   
+            transition: $transition;
+
+            &_error {
+                color: $error;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    display: inline-block;
+                    margin-right: 5px;
+                    width: 15px;
+                    height: 18px;
+                    
+                }
+            }
         }
     }
 
@@ -57,20 +78,8 @@ $transition: all .4s ease;
         color: $hidden-color;
         transition: $transition;
 
-        &_active {
+        &_active, &:hover {
             color: $lt-border-color;
         }
     }
-    // .error {
-    //     display: flex;
-    //     flex-direction: row;
-    //     align-items: center;
-    //     color: $_red !important;
-
-    //     svg {
-    //         width: 15px;
-    //         height: 15px;
-    //         margin-right: 10px;
-    //     }
-    // }
 }
