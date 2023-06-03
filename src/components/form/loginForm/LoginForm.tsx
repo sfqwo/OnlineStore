@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Input from '../inputs/input/Input';
 import Link from 'next/link';
-import SubmitButton from '@components/form/submitButton/SubmitButton';
+import SubmitButton from '@src/components/buttons/submitButton/SubmitButton';
 import FormFooter from '@components/form/formFooter/FormFooter';
 import { useModalContext } from '@src/utils/modalContext/ModalContext';
 

@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Input from '../inputs/input/Input';
-import SubmitButton from '@components/form/submitButton/SubmitButton';
 import FormFooter from '@components/form/formFooter/FormFooter';
 import { useModalContext } from '@src/utils/modalContext/ModalContext';
+import SubmitButton from '@src/components/buttons/submitButton/SubmitButton';
 
 type TInputs = {
   email: string,

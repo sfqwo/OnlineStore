@@ -8,9 +8,10 @@ import { Autoplay } from 'swiper';
 interface ISlider {
   title: string,
   items: IFilm[],
+  delay?: number,
 }
 
-const Slider: React.FC<ISlider> = ({ title, items }) => {
+const Slider: React.FC<ISlider> = ({ title, items, delay }) => {
   return (
     <>
       <div className={styles.title}>{title}</div>
@@ -20,7 +21,7 @@ const Slider: React.FC<ISlider> = ({ title, items }) => {
         slidesPerView={4}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: delay || 3000,
         }}
       >
         {items?.map(item => (

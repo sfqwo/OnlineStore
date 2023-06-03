@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styles from './MainBlock.module.scss'
 import Link from 'next/link';
 import LinkSvg from '@assets/icons/link.svg';
@@ -31,10 +31,10 @@ const MainBlock: React.FC<IMainBlock> = ({ events, selection }) => {
         <div className={styles.info__events}>
           <div className={styles.info__events_title}>О событиях кино</div>
           {events.map((event) => (
-            <>
+            <Fragment key={event.title}>
               <div className={styles.info__events_subtitle}>{event.title}</div>
               <div className={styles.info__events_content}>{event.content}</div>
-            </>
+            </Fragment>
           ))}
         </div>
       </div>

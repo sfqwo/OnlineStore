@@ -26,11 +26,11 @@ const FormFooter = ({ isReg = false, changeForm }: IFormFooter) => {
       <span className={styles.politic}>
         Продолжая, я соглашаюсь c
         &nbsp;
-        <a href='/'>Пользовательским соглашением</a>
+        <Link href='/'>Пользовательским соглашением</Link>
         &nbsp;
         и
         &nbsp;
-        <a href='/'>Политикой конфиденциальности</a>
+        <Link href='/'>Политикой конфиденциальности</Link>
       </span>
     </div>
   )

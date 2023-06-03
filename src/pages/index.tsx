@@ -29,10 +29,10 @@ export default function Home({ top, premieres, genres }: { top: IFilmsTop, premi
       <MetaHead title='Online Store' description="Главная" />
       <main>
         <MainBlock events={data.events} selection={top.films.slice(0, 4)} />
-        <Slider title='Новинки' items={premieres.items} />
+        <Slider title='Новинки' items={premieres.items} delay={2000} />
         <Slider title='Рекомендации для вас' items={top.films.slice(4, 12)} />
         <GenreSliderBlock {...genres} />
-        <Slider title='Рекомендации для вас' items={top.films.slice(12, 20)} />
+        <Slider title='Рекомендации для вас' items={top.films.slice(12, 20)} delay={4000} />
       </main>
     </>
   )

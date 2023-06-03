@@ -12,4 +12,37 @@
             margin: 0 13px;
         }
     }
+
+    &__info_container {
+        @include row;
+        margin: 50px 150px 80px 150px;
+        @include spaceBetween;
+    }
+
+    &__info {
+        @include column;
+
+        &_title {
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        &_content {
+            @include column;
+
+            a {
+                margin-bottom: 10px;
+
+                &:last-child { margin-bottom: 0 }
+            }
+        }
+
+        &_buttons {
+            @include spaceBetween;
+            @include center;
+            margin-top: 20px;
+        }
+
+        &:last-child { flex-basis: 380px }
+    }
 }

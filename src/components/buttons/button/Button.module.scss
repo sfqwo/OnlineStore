@@ -1,15 +1,15 @@
 @import '@styles/var.scss';
 
 .button {
-    width: 195px;
     height: 55px;
     @include row;
     @include centerSelf;
-    border: $lt-border;
+    border: $dt-border;
     font-size: 20px;
     line-height: 23px;
-    color: $lt-text-color;
-    margin: 25px auto;
+    color: $dt-text-color;
+    text-transform: uppercase;
+    padding: 0 16px;
 
     svg {
         transform: rotate(-90deg);
@@ -20,4 +20,12 @@
         opacity: 0.3;
         cursor: default;
     }
+}
+
+.form {
+    width: 195px;
+    text-transform: none;
+    border: $lt-border;
+    color: $lt-text-color;
+    margin: 25px auto;
 }

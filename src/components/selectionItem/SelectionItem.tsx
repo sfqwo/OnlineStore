@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './SelectionItem.module.scss';
 import { IFilm } from '@src/models/films';
+import LinkSvg from '@assets/icons/link.svg';
 import clsx from 'clsx';
 
 interface ISelectionItem {
@@ -20,6 +21,9 @@ const SelectionItem = ({ film, isSlider = false, isGenre = false }: ISelectionIt
         {film.genres.map(g => g.genre + ',  ')}
         </div>
       <div style={{ backgroundImage: `url(${film.posterUrl})`}} className={styles.film_img} />
+      <div className={styles.film_link}>
+        <LinkSvg />
+      </div>
     </Link>
   )
 }
