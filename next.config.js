@@ -3,7 +3,11 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '"kinopoiskapiunofficial.tech',
+        hostname: 'kinopoiskapiunofficial.tech',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.mds.yandex.net',
       },
     ],
   },

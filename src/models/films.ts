@@ -12,15 +12,43 @@ export interface IFilms {
 
 export type TGenre = { genre: string };
 
+interface ICountry {
+  country: string;
+}
+
 export interface IFilm {
   filmId: number;
   filmLength: string;
   genres: TGenre[];
-  nameEn: string;
+  nameOriginal: string;
   nameRu: string;
   posterUrl: string;
   rating: string;
   year: string;
+  description: string;
+  posterUrlPreview: string;
+  countries: ICountry[];
+  slogan: string;
+}
+
+export interface IFilmImage {
+  imageUrl: string;
+  previewUrl: string;
+}
+
+export interface IFilmAward {
+  name: string;
+  win: boolean;
+  imageUrl?: string;
+  nominationName: string;
+  year: number;
+  persons: any[];
+}
+
+export interface IBoxOffice {
+  amount: number;
+  symbol: string;
+  type: 'BUDGET' | 'USA' | 'WORLD';
 }
 
 export enum EGenres {

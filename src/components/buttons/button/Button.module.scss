@@ -10,6 +10,7 @@
   color: $dt-text-color;
   text-transform: uppercase;
   padding: 0 16px;
+  transition: all 0.3s ease;
 
   svg {
     transform: rotate(-90deg);
@@ -20,6 +21,11 @@
     opacity: 0.3;
     cursor: default;
   }
+
+  &:hover {
+    background-color: $dt-text-color;
+    color: $lt-text-color;
+  }
 }
 
 .form {
@@ -28,4 +34,9 @@
   border: $lt-border;
   color: $lt-text-color;
   margin: 25px auto;
+
+  &:hover {
+    background-color: $lt-text-color;
+    color: $dt-text-color;
+  }
 }

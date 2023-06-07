@@ -132,5 +132,6 @@ export async function getStaticProps() {
         kids: kids.items,
       },
     },
+    revalidate: 60,
   };
 }

@@ -14,14 +14,14 @@ interface ISelectionItem {
 const SelectionItem = ({ film, isSlider = false, isGenre = false }: ISelectionItem) => {
   return (
     <Link
-      href="/"
+      href={`/films/${film.filmId}`}
       className={clsx(styles.film, isSlider && styles.slider, isGenre && styles.genre)}
     >
       <div className={styles.film_info}>{film.nameRu}</div>
       <div className={styles.film_info}>
         {film.year}
         <br />
-        {film.genres.map((g) => g.genre + ',  ')}
+        {film.genres?.map((g) => g.genre + ',  ')}
       </div>
       <div style={{ backgroundImage: `url(${film.posterUrl})` }} className={styles.film_img} />
       <div className={styles.film_link}>

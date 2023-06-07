@@ -15,9 +15,11 @@ body {
     monospace;
   --font-serif: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
 }
+
 body {
   font-family: var(--font-sans);
 }
+
 code,
 kbd,
 samp {
@@ -47,6 +49,7 @@ pre {
   border: none;
   outline: none;
 }
+
 td,
 legend,
 textarea,
@@ -54,6 +57,7 @@ input,
 fieldset {
   padding: 0;
 }
+
 ul,
 ol {
   margin: 0;
@@ -94,13 +98,16 @@ a {
   color: #eff2a5;
   text-decoration: none;
 }
+
 b,
 strong {
   font-weight: bolder;
 }
+
 small {
   font-size: 80%;
 }
+
 sub,
 sup {
   font-size: 75%;
@@ -108,15 +115,19 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
+
 ul {
   list-style: none;
 }
+
 hr {
   height: 0;
   color: inherit;

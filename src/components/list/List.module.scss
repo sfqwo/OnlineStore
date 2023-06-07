@@ -1,0 +1,20 @@
+@import '@styles/var.scss';
+
+.list {
+  @include row;
+  width: 100%;
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &_title {
+    width: 30%;
+  }
+
+  &_value {
+    width: 70%;
+    text-transform: uppercase;
+  }
+}
