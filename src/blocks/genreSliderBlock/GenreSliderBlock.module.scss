@@ -1,22 +1,22 @@
 @import '@styles/var.scss';
 
 .block {
-  @include row;
-  margin-top: 45px;
+  @include column;
+  margin: 45px auto 0 auto;
 
-  &_link {
-    @include row;
-    align-items: flex-end;
-    justify-content: end;
-    text-transform: uppercase;
+  .link {
     border: $dt-border;
-    border-left: none;
-    width: 100%;
-    padding: 9px;
+    border-top: none;
+  }
 
-    svg {
-      transform: rotate(-90deg);
-      margin-left: 5px;
+  @media (min-width: $media_desktop) {
+    @include row;
+    width: max-content;
+
+    .link {
+      border-top: $dt-border;
+      border-left: none;
+      width: 70px;
     }
   }
 }

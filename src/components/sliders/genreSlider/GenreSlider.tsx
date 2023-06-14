@@ -1,7 +1,7 @@
 import { IGenreSliderBlock } from '@src/blocks/genreSliderBlock/GenreSliderBlock';
 import { EGenres, IFilm } from '@src/models/films';
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import SelectionItem from '../selectionItem/SelectionItem';
+import SelectionItem from '@components/selectionItem/SelectionItem';
 import styles from './GenreSlider.module.scss';
 import clsx from 'clsx';
 

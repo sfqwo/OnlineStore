@@ -1,0 +1,140 @@
+@import '@styles/var.scss';
+
+.main {
+  border: $dt-border;
+  @include column;
+
+  &_img {
+    position: relative;
+    height: 520px;
+    max-width: 690px;
+    margin: 20px;
+  }
+
+  &_info {
+    @include column;
+    margin: 20px;
+
+    &__header {
+      @include column-spaced;
+      flex-wrap: wrap;
+      position: relative;
+
+      &_buttons {
+        @include row-center;
+        position: absolute;
+        width: 100%;
+        bottom: -80px;
+        left: 0;
+
+        svg {
+          cursor: pointer;
+          color: $hidden-color;
+          transition: all 0.3s ease;
+          margin-right: 10px;
+
+          &:hover {
+            color: $dt-text-color;
+          }
+        }
+      }
+
+      &_name {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+
+    &__desc {
+      margin-top: 120px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__frames {
+      margin-top: 40px;
+
+      &_title {
+        font-size: 16px;
+        line-height: 18px;
+        text-transform: uppercase;
+      }
+
+      &_items {
+        margin-top: 20px;
+        @include row-spaced;
+        flex-wrap: wrap;
+
+        img {
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $media_tablet) {
+    @include row;
+
+    &_img {
+      margin-right: 0;
+      width: 50%;
+    }
+
+    &_info {
+      margin: 60px 40px;
+      width: 50%;
+
+      &__header {
+        @include row;
+
+        &_subname {
+          position: absolute;
+          top: 45px;
+          left: 0;
+        }
+
+        &_buttons {
+          position: static;
+          margin-top: 40px;
+        }
+      }
+
+      &__desc {
+        margin-top: 40px;
+      }
+
+      &__frames {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  @media (min-width: $media_desktop) {
+    .main_info__frames_items {
+      flex-wrap: nowrap;
+      width: 100%;
+
+      img {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.about {
+  @include row;
+
+  &_col {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  @media (min-width: $media_tablet) {
+    &_col {
+      width: auto;
+      max-width: 50%;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 @import '@styles/var.scss';
 
 .header {
-  @include spaceBetween;
+  @include row-spaced;
   border: $dt-border;
   font-family: 'Raleway-Light';
   height: 160px;
@@ -20,35 +20,37 @@
     text-transform: uppercase;
     text-align: center;
     vertical-align: middle;
-    margin: auto 0;
   }
 
   &__menu {
-    @include spaceBetween;
+    @include row-spaced;
     padding: 0 55px;
-    margin-left: 12.5vw;
-    border-left: $dt-border;
-    width: 68.5%;
+    width: 100%;
+
+    &_button {
+      padding-left: 30px;
+    }
 
     &_nav {
-      @include spaceBetween;
-      width: 35vw;
+      @include row-center-spaced;
+      width: 36vw;
+    }
+
+    &_login {
+      display: none;
     }
   }
 
   &__account {
-    @include spaceBetween;
-    width: 20vw;
-    max-width: 285px;
-    @include center;
-    padding: 0 55px;
+    @include row-center-spaced;
+    min-width: 150px;
+    padding: 0 30px;
     border-left: $dt-border;
   }
 
   &__search {
     width: 27px;
     height: 27px;
-    border: $dt-border;
 
     svg {
       transform: scale(0.8);
@@ -56,16 +58,38 @@
   }
 
   &__content {
-    display: flex;
-    margin: auto 37px;
+    @include row-center;
+    margin: 0 37px;
 
     &__link {
+      display: none;
+    }
+  }
+
+  @media (min-width: $media_tablet) {
+    .header__menu {
+      margin-left: 12.5vw;
+      border-left: $dt-border;
+
+      &_login {
+        display: block;
+      }
+    }
+
+    .header__content__link {
       display: flex;
-      margin-left: 80px !important;
+      margin-left: 80px;
 
       svg {
         margin-right: 10px;
       }
+    }
+  }
+
+  @media (min-width: $media_large) {
+    .header__account {
+      min-width: 250px;
+      padding: 0 55px;
     }
   }
 }

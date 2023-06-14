@@ -31,11 +31,11 @@ export const initialModalData = {
 
 const ModalContext = React.createContext({
   type: defaultType,
-  handleOpen: (type: TModalType) => {},
-  handleClose: () => {},
+  handleOpen: (type: TModalType) => { },
+  handleClose: () => { },
 });
 
-export const ModalProvider = ({ children }: TFC) => {
+export const ModalProvider: TFC = ({ children }) => {
   const [modalData, setModalData] = useState(initialModalData);
 
   const handleClose = React.useCallback(() => {

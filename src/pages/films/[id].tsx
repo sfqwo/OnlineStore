@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import FavoriteSvg from '@assets/icons/favorite.svg';
 import EyeSvg from '@assets/icons/eye.svg';
-import styles from './film.module.scss';
+import styles from '@styles/film.module.scss';
 import Button from '@src/components/buttons/button/Button';
 import { MoreButton } from '@src/components/buttons/moreButton/MoreButton';
 import moneyTransformer from '@src/utils/moneyTransformer';
-import Slider from '@src/components/slider/Slider';
+import Slider from '@src/components/sliders/slider/Slider';
 import { List } from '@src/components/list/List';
 import { useMemo } from 'react';
 
@@ -57,9 +57,11 @@ const FilmPage: NextPage<IFilmPage> = ({ film, images, boxOffice, similars }) =>
                 &nbsp; 16+
               </div>
             )}
-            <FavoriteSvg />
-            <EyeSvg />
-            <Button title="Смотреть" />
+            <div className={styles.main_info__header_buttons}>
+              <FavoriteSvg />
+              <EyeSvg />
+              <Button title="Смотреть" />
+            </div>
           </div>
           <div className={styles.main_info__desc}>{description}</div>
           <div className={styles.main_info__frames}>

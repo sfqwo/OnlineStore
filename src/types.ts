@@ -1,3 +1,3 @@
-export interface TFC {
-  children: string | JSX.Element | JSX.Element[] | (() => JSX.Element);
-}
+import { FC, PropsWithChildren } from "react";
+
+export type TFC<TProps = Record<string, unknown>> = FC<PropsWithChildren<TProps>>;

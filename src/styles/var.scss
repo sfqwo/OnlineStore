@@ -9,6 +9,14 @@ $_blue: #22225d;
 $hidden-color: #989985;
 
 /*===================================================
+    Screen width
+===================================================*/
+
+$media_tablet: 640px;
+$media_desktop: 960px;
+$media_large: 1240px;
+
+/*===================================================
     Dark Theme Color
 ===================================================*/
 
@@ -41,9 +49,34 @@ $error: $_red;
   flex-direction: row;
 }
 
+@mixin row-spaced {
+  @include row;
+  justify-content: space-between;
+}
+
+@mixin row-center {
+  @include row;
+  align-items: center;
+}
+
+@mixin row-center-spaced {
+  @include row-spaced;
+  align-items: center;
+}
+
 @mixin column {
   display: flex;
   flex-direction: column;
+}
+
+@mixin column-center {
+  @include column;
+  align-items: center;
+}
+
+@mixin column-spaced {
+  @include column;
+  justify-content: space-between;
 }
 
 @mixin spaceBetween {

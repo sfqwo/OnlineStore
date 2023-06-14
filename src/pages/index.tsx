@@ -1,7 +1,7 @@
 import GenreSliderBlock from '@src/blocks/genreSliderBlock/GenreSliderBlock';
 import MainBlock from '@src/blocks/mainBlock/MainBlock';
 import { MetaHead } from '@src/components/metaHead/MetaHead';
-import Slider from '@src/components/slider/Slider';
+import Slider from '@src/components/sliders/slider/Slider';
 import { IFilm, IFilms, IFilmsTop } from '@src/models/films';
 
 const data = {

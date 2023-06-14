@@ -14,13 +14,15 @@
   }
 
   &__info_container {
-    @include row;
-    margin: 50px 150px 80px 150px;
-    @include spaceBetween;
+    @include row-spaced;
+    flex-wrap: wrap;
+    margin: 0 auto 80px auto;
   }
 
   &__info {
     @include column;
+    margin-top: 50px;
+    padding: 0 10px;
 
     &_title {
       text-transform: uppercase;
@@ -40,13 +42,30 @@
     }
 
     &_buttons {
-      @include spaceBetween;
-      @include center;
+      @include row-center-spaced;
       margin-top: 20px;
     }
 
     &:last-child {
       flex-basis: 380px;
+    }
+  }
+
+  @media (min-width: 450px) {
+    &__info_container {
+      margin: 0 50px 80px 50px;
+    }
+  }
+
+  @media (min-width: $media_desktop) {
+    &__info_container {
+      margin: 0 150px 80px 150px;
+    }
+  }
+
+  @media (min-width: $media_large) {
+    &__info_container {
+      flex-wrap: nowrap;
     }
   }
 }

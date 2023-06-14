@@ -5,8 +5,7 @@ $transition: all 0.4s ease;
 
 .container {
   position: relative;
-  @include row;
-  @include center;
+  @include row-center;
   border: $lt-border;
   width: 570px;
   max-width: 570px;
@@ -15,11 +14,11 @@ $transition: all 0.4s ease;
     display: none;
   }
 
-  & + & {
+  &+& {
     border-top: none;
   }
 
-  &_hidden + & {
+  &_hidden+& {
     border-top: $lt-border;
   }
 
@@ -44,11 +43,11 @@ $transition: all 0.4s ease;
       &:hover {
         border-bottom: $lt-border;
 
-        & + .label {
+        &+.label {
           color: $lt-text-color;
         }
 
-        & + .label_error {
+        &+.label_error {
           color: $error;
         }
       }

@@ -55,10 +55,12 @@
       background-color: $lt-text-color;
       margin-left: 3px;
     }
+
     &::after {
       transform: rotate(-45deg);
       margin-top: -2px;
     }
+
     &::before {
       transform: rotate(45deg);
     }

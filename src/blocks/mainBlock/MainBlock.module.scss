@@ -6,32 +6,33 @@
   border-width: 0 2px 2px 2px;
 
   .info {
-    @include row;
-    margin-left: 12.5vw;
+    @include column;
     border: $dt-border;
-    border-width: 0 0 2px 2px;
+    border-width: 0 0 2px 0;
 
     &__main {
       position: relative;
-      border-right: $dt-border;
+      border-bottom: $dt-border;
+      min-height: 188px;
 
       &_title {
-        font-size: 64px;
-        line-height: 74px;
-        margin: 50px;
-        text-transform: uppercase;
+        font-size: 34px;
+        line-height: 42px;
+        margin: 30px 80px 30px 30px;
       }
 
       &_subscribe {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        @include center;
+        top: 60px;
+        width: 188px;
+        right: -62px;
+        @include row-center;
         border: $dt-border;
-        border-width: 2px 0 0 2px;
+        border-width: 2px 0 2px 2px;
         padding: 9px 17px;
         font-size: 20px;
         line-height: 23px;
+        transform: rotate(-90deg);
         text-transform: uppercase;
         text-decoration: none;
 
@@ -45,7 +46,6 @@
     &__events {
       padding: 30px 38px;
       text-align: center;
-      width: 40vw;
 
       &_title,
       &_subtitle {
@@ -66,9 +66,83 @@
   }
 
   .selection {
-    @include row;
+    @include column;
     margin-left: 12.5vw;
     border: $dt-border;
     border-width: 0 0 0 2px;
+
+    a {
+      width: 100%;
+      border-right: none;
+      border-bottom: $dt-border;
+    }
+  }
+
+  @media (min-width: $media_tablet) {
+    .info {
+      @include row;
+
+      &__main {
+        border-right: $dt-border;
+        border-bottom: none;
+
+        &_title {
+          font-size: 54px;
+          line-height: 62px;
+          margin: 50px;
+          text-transform: uppercase;
+        }
+
+        &_subscribe {
+          transform: none;
+          width: auto;
+          top: auto;
+          bottom: -2px;
+          left: auto;
+          right: 0;
+        }
+
+        &__events {
+          width: 40vw;
+        }
+      }
+    }
+
+    .selection {
+      @include row;
+      flex-wrap: wrap;
+
+      a {
+        width: 50%;
+        border-right: $dt-border;
+        border-bottom: $dt-border;
+      }
+    }
+  }
+
+  @media (min-width: $media_desktop) {
+    .info {
+      margin-left: 12.5vw;
+      border-left: $dt-border;
+
+      &__main {
+
+        &_title {
+          font-size: 64px;
+          line-height: 74px;
+        }
+      }
+    }
+
+    .selection {
+      a {
+        width: 25%;
+        border-bottom: none;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
   }
 }
